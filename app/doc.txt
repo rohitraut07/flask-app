@@ -1,0 +1,86 @@
+Login Request:curl --location --request POST '/aapi/v1.0/signin' --header 'Content-Type: application/json' --data-raw '{"username": "sonal@opsfuse.com","password": "Test1234!"}'
+
+Login Response:{"token": "eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJmMjAxNTA2Ni00ZjFhLTRmZDUtODZiNS1lMzMzMWNkNjk3ODEifQ.eyJqdGkiOiI1MWU4OGZiMS1iOGU0LTRhZmEtOGZiNy05YTY2M2I0Njc4MjkiLCJleHAiOjE1OTI5MTUxMTksIm5iZiI6MCwiaWF0IjoxNTkyOTEzMzE5LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aC9yZWFsbXMvQWx0cmVub1NpdGUuY29tIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL0FsdHJlbm9TaXRlLmNvbSIsInN1YiI6IjY0MzM2YTFjLTE5YTEtNGExZS1hYzkxLTg1YTI4N2FmZTFlNiIsInR5cCI6IlJlZnJlc2giLCJhenAiOiJhZG1pbi1jbGkiLCJhdXRoX3RpbWUiOjAsInNlc3Npb25fc3RhdGUiOiI1N2JmMDI2NC0zZDAwLTQzNTctODYyMy04YjczMjJlNDRmNzEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUifQ.KLa65i651AI3mLhBH7JIgiSyTNmYJIRSDcf3TGrDOrw",
+
+“first_name”:”Sonal”,
+
+“last_name”:”Rajbhoj”,
+
+“user_emai”:”sonal@opfuse.com”
+
+}
+
+
+POST Content
+curl --location --request POST '/aapi/v1.0/content'
+--header 'Bearer: eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJmMjAxNTA2Ni00ZjFhLTRmZDUtODZiNS1lMzMzMWNkNjk3ODEifQ.eyJqdGkiOiI1MWU4OGZiMS1iOGU0LTRhZmEtOGZiNy05YTY2M2I0Njc4MjkiLCJleHAiOjE1OTI5MTUxMTksIm5iZiI6MCwiaWF0IjoxNTkyOTEzMzE5LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aC9yZWFsbXMvQWx0cmVub1NpdGUuY29tIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL0FsdHJlbm9TaXRlLmNvbSIsInN1YiI6IjY0MzM2YTFjLTE5YTEtNGExZS1hYzkxLTg1YTI4N2FmZTFlNiIsInR5cCI6IlJlZnJlc2giLCJhenAiOiJhZG1pbi1jbGkiLCJhdXRoX3RpbWUiOjAsInNlc3Npb25fc3RhdGUiOiI1N2JmMDI2NC0zZDAwLTQzNTctODYyMy04YjczMjJlNDRmNzEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUifQ.KLa65i651AI3mLhBH7JIgiSyTNmYJIRSDcf3TGrDOrw'
+--header 'Content-Type: application/json'
+--data-raw '{
+"link": "https://www.latimes.com/food/story/2021-02-24/girl-scout-cookie-power-rankings",
+"title": "The official Girl Scout cookie power rankings",
+"summary": "Welcome to the conclusive, unassailable and 100% correct Girl Scout Cookie Power Rankings",
+"published_date": "1592919587263",
+"image_link": "https://www.latimes.com/food/story/2021-02-24/girl-scout-cookie-power-rankings“,
+"source_id": "9353a9fb-c902-486f-8460-a21f93c8a487”
+"tag_id" : {"9353a9fb-c902-486f-8460-a21f93c8a487", "9353a9fb-c902-486f-8460-a21f93c8a487"},
+"content_type" : "NEWS/ARTICLE/FACT"
+}'
+
+Add Content Response
+{
+"link": "https://www.latimes.com/food/story/2021-02-24/girl-scout-cookie-power-rankings",
+"title": "The official Girl Scout cookie power rankings",
+"summary": "Welcome to the conclusive, unassailable and 100% correct Girl Scout Cookie Power Rankings",
+"published_date": "1592919587263",
+"image_link": "https://www.latimes.com/food/story/2021-02-24/girl-scout-cookie-power-rankings“,
+"source_id": "9353a9fb-c902-486f-8460-a21f93c8a487",
+"date_added": "1592919587263",
+"date_modified": "1592919587263",
+"tag_id" : {"9353a9fb-c902-486f-8460-a21f93c8a487", "9353a9fb-c902-486f-8460-a21f93c8a487"},
+"content_type" : "NEWS"
+"id" : "9353a9fb-c902-486f-8460-a21f93c8a493"
+}
+
+PUT Content
+curl --location --request PUT '/aapi/v1.0/content/<content_id>'
+--header Authorization 'Bearer: eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJmMjAxNTA2Ni00ZjFhLTRmZDUtODZiNS1lMzMzMWNkNjk3ODEifQ.eyJqdGkiOiI1MWU4OGZiMS1iOGU0LTRhZmEtOGZiNy05YTY2M2I0Njc4MjkiLCJleHAiOjE1OTI5MTUxMTksIm5iZiI6MCwiaWF0IjoxNTkyOTEzMzE5LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aC9yZWFsbXMvQWx0cmVub1NpdGUuY29tIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL0FsdHJlbm9TaXRlLmNvbSIsInN1YiI6IjY0MzM2YTFjLTE5YTEtNGExZS1hYzkxLTg1YTI4N2FmZTFlNiIsInR5cCI6IlJlZnJlc2giLCJhenAiOiJhZG1pbi1jbGkiLCJhdXRoX3RpbWUiOjAsInNlc3Npb25fc3RhdGUiOiI1N2JmMDI2NC0zZDAwLTQzNTctODYyMy04YjczMjJlNDRmNzEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUifQ.KLa65i651AI3mLhBH7JIgiSyTNmYJIRSDcf3TGrDOrw'
+--header 'Content-Type: application/json'
+--data-raw '{
+"link": "https://www.latimes.com/food/story/2021-02-24/girl-scout-cookie-power-rankings",
+"title": "The official Girl Scout cookie power rankings",
+"summary": "Welcome to the conclusive, unassailable and 100% correct Girl Scout Cookie Power Rankings",
+"published_date": "1592919587263",
+"image_link": "https://www.latimes.com/food/story/2021-02-24/girl-scout-cookie-power-rankings“,
+"source_id": "9353a9fb-c902-486f-8460-a21f93c8a487",
+"date_added": "1592919587263",
+"date_modified": "1592919587263",
+"tag_id" : {"9353a9fb-c902-486f-8460-a21f93c8a487", "9353a9fb-c902-486f-8460-a21f93c8a487"},
+"content_type" : "ARTICLE"
+"id" : "9353a9fb-c902-486f-8460-a21f93c8a493"
+}'
+
+PUT content Response
+curl --location --request PUT '/aapi/v1.0/content/<content_id>'
+--header Authorization 'Bearer: eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJmMjAxNTA2Ni00ZjFhLTRmZDUtODZiNS1lMzMzMWNkNjk3ODEifQ.eyJqdGkiOiI1MWU4OGZiMS1iOGU0LTRhZmEtOGZiNy05YTY2M2I0Njc4MjkiLCJleHAiOjE1OTI5MTUxMTksIm5iZiI6MCwiaWF0IjoxNTkyOTEzMzE5LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aC9yZWFsbXMvQWx0cmVub1NpdGUuY29tIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL0FsdHJlbm9TaXRlLmNvbSIsInN1YiI6IjY0MzM2YTFjLTE5YTEtNGExZS1hYzkxLTg1YTI4N2FmZTFlNiIsInR5cCI6IlJlZnJlc2giLCJhenAiOiJhZG1pbi1jbGkiLCJhdXRoX3RpbWUiOjAsInNlc3Npb25fc3RhdGUiOiI1N2JmMDI2NC0zZDAwLTQzNTctODYyMy04YjczMjJlNDRmNzEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUifQ.KLa65i651AI3mLhBH7JIgiSyTNmYJIRSDcf3TGrDOrw'
+--header 'Content-Type: application/json'
+--data-raw '{
+"link": "https://www.latimes.com/food/story/2021-02-24/girl-scout-cookie-power-rankings",
+"title": "The official Girl Scout cookie power rankings",
+"summary": "Welcome to the conclusive, unassailable and 100% correct Girl Scout Cookie Power Rankings",
+"published_date": "1592919587263",
+"image_link": "https://www.latimes.com/food/story/2021-02-24/girl-scout-cookie-power-rankings“,
+"source_id": "9353a9fb-c902-486f-8460-a21f93c8a487",
+"date_added": "1592919587263",
+"date_modified": "1592919587263",
+"tag_id" : {"9353a9fb-c902-486f-8460-a21f93c8a487", "9353a9fb-c902-486f-8460-a21f93c8a487"},
+"content_type" : "ARTICLE"
+"id" : "9353a9fb-c902-486f-8460-a21f93c8a493"
+}'
+
+DEL Content Request
+curl --location --request DEL '/aapi/v1.0/content/<content_id>'
+--header 'Authorization Bearer: eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJmMjAxNTA2Ni00ZjFhLTRmZDUtODZiNS1lMzMzMWNkNjk3ODEifQ.eyJqdGkiOiI1MWU4OGZiMS1iOGU0LTRhZmEtOGZiNy05YTY2M2I0Njc4MjkiLCJleHAiOjE1OTI5MTUxMTksIm5iZiI6MCwiaWF0IjoxNTkyOTEzMzE5LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aC9yZWFsbXMvQWx0cmVub1NpdGUuY29tIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL0FsdHJlbm9TaXRlLmNvbSIsInN1YiI6IjY0MzM2YTFjLTE5YTEtNGExZS1hYzkxLTg1YTI4N2FmZTFlNiIsInR5cCI6IlJlZnJlc2giLCJhenAiOiJhZG1pbi1jbGkiLCJhdXRoX3RpbWUiOjAsInNlc3Npb25fc3RhdGUiOiI1N2JmMDI2NC0zZDAwLTQzNTctODYyMy04YjczMjJlNDRmNzEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUifQ.KLa65i651AI3mLhBH7JIgiSyTNmYJIRSDcf3TGrDOrw'
+
+DEL Content Response
+OK
+
