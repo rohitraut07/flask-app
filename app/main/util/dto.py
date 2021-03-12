@@ -54,3 +54,8 @@ class UserDto:
         'id': fields.Integer(required=True, description='user id in database', default=1),
         'message': fields.String(required=True, description='message')
     })
+
+    req_sign_in = api.model("Sign in", {
+        "username": fields.String(required=True, description='email id'),
+        "password": fields.String(required=True, description='user password')
+    })

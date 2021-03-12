@@ -20,7 +20,7 @@ _req_subscriber = UserDto.req_subscriber
 _req_get_admin = UserDto.req_get_admin
 _req_save_admin = UserDto.req_save_admin
 _req_get_all = UserDto.req_get_all
-
+_req_sign_in = UserDto.req_sign_in
 
 @api.route('api/subscription')
 class InsertUser(Resource):
@@ -82,6 +82,7 @@ class User(Resource):
 
 @api.route('aapi/v1.0/signin')
 class AdminSignIn(Resource):
+    @api.expect(_req_sign_in)
     def post(self):
         data = request.json
         if not data or not data['username'] or not data['password']:
